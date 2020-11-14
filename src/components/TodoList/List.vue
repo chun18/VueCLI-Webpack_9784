@@ -1,7 +1,6 @@
 <template>
     <v-main class="list">
-        <h3 class="text-h3 font-weight-medium mb-5">To Do List</h3>
-
+        <h3 class="text-h3 font-weight-medium mb-5">To Do List UGD</h3>
         <v-card>
             <v-card-title primary-title>
                 <v-text-field
@@ -11,7 +10,6 @@
                 single-line
                 hide-details></v-text-field>
                 <v-spacer></v-spacer>
-                
                 <v-btn color="success" dark @click="dialog = true">Tambah</v-btn>
             </v-card-title>
             <v-data-table :headers="headers" :items="todos" :search="search" pagination.sync="pagination">
@@ -34,7 +32,7 @@
         >
             <v-card>
                 <v-card-title>
-                    <span class="headline">From Todo</span>
+                    <span class="headline">Form Todo</span>
                 </v-card-title>
                 <v-card-text>
                     <v-container>
@@ -64,7 +62,9 @@
     </v-main>
 </template>
 <script>
+
 export default {
+    
     name:"List",
     data(){
         return {
