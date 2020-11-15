@@ -1,6 +1,6 @@
 <template>
     <v-main class="list">
-        <h3 class="text-h3 font-weight-medium mb-5">To Do List UGD</h3>
+        <h3 class="text-h3 font-weight-medium mb-5">To Do List Tugas</h3>
         <v-card>
             <v-card-title primary-title>
                 <v-text-field
@@ -18,7 +18,7 @@
                 </select>
                 <v-btn color="success" dark @click="dialog = true">Tambah</v-btn>
             </v-card-title>
-            <v-data-table :headers="headers" :items="filteredItems" :search="search" pagination.sync="pagination">
+            <v-data-table  :headers="headers" :items="filteredItems" :search="search" pagination.sync="pagination">
                 <template v-slot:[`item.actions`]="{ item }">
                     <v-btn small class="mr-2" @click="editItem(item)">
                     edit
@@ -26,6 +26,7 @@
                     <v-btn small @click="deleteItem(item)">
                     delete
                     </v-btn>
+                    <input type = "checkbox">
                 </template>
             </v-data-table>
         </v-card>
@@ -86,6 +87,7 @@ export default {
                 { text: "Priority", value:"priority"},
                 { text: "Note", value:"note"},
                 { text: "Actions", value:"actions"},
+                { text: "Multiple", value:"multiple"},
             ],
             todos: [
                 {
@@ -156,6 +158,6 @@ export default {
                 return !this.comboBoxSearch || (i.priority === this.comboBoxSearch);
             })
         }
-    }
+    },
 };
 </script>
